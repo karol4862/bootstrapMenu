@@ -1,17 +1,28 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <b-btn @click="isMenuActive = !isMenuActive">Menu</b-btn>
+    <Menu @triggerMenu="doTriggerMenu" :menuActive="isMenuActive"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Menu from './components/Menu.vue';
 
 export default {
   name: 'app',
+  data() {
+    return {
+      isMenuActive: false,
+    };
+  },
+  methods: {
+    doTriggerMenu() {
+      this.isMenuActive = false;
+    },
+  },
   components: {
-    HelloWorld,
+    Menu,
   },
 };
 </script>

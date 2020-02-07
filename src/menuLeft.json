@@ -1,0 +1,96 @@
+[
+  {
+    "name": "strona-glowna",
+    "path": "/strona-glowna",
+    "display": true,
+    "meta": {
+      "icon": "home",
+      "requiresAuth": true,
+      "menuType": "sidebar",
+      "displayName": "Strona główna"
+    },
+    "children": []
+  },
+  {
+    "name": "produkty",
+    "path": "/oferta",
+    "display": true,
+    "meta": {
+      "requiresAuth": true,
+      "menuType": "sidebar",
+      "displayName": "Produkty"
+    },
+    "children": []
+  },
+  {
+    "name": "blog",
+    "path": "/blog",
+    "display": true,
+    "meta": {
+      "requiresAuth": true,
+      "menuType": "sidebar",
+      "displayName": "Blog"
+    },
+    "children": []
+  },{
+    "name": "blogs",
+    "path": "/blog",
+    "display": true,
+    "meta": {
+      "requiresAuth": true,
+      "menuType": "sidebar",
+      "displayName": "Blog"
+    },
+    "children": []
+  },{
+    "name": "bloga",
+    "path": "/blog",
+    "display": true,
+    "meta": {
+      "requiresAuth": true,
+      "menuType": "sidebar",
+      "displayName": "Blog"
+    },
+    "children": []
+  },{
+    "name": "blosg",
+    "path": "/blog",
+    "display": true,
+    "meta": {
+      "requiresAuth": true,
+      "menuType": "sidebar",
+      "displayName": "Blog"
+    },
+    "children": []
+  },{
+    "name": "bslog",
+    "path": "/blog",
+    "display": true,
+    "meta": {
+      "requiresAuth": true,
+      "menuType": "sidebar",
+      "displayName": "Blog"
+    },
+    "children": []
+  },{
+    "name": "blsog",
+    "path": "/blog",
+    "display": true,
+    "meta": {
+      "requiresAuth": true,
+      "menuType": "sidebar",
+      "displayName": "Blog"
+    },
+    "children": []
+  },{
+    "name": "blodg",
+    "path": "/blog",
+    "display": true,
+    "meta": {
+      "requiresAuth": true,
+      "menuType": "sidebar",
+      "displayName": "Blog"
+    },
+    "children": []
+  }
+]

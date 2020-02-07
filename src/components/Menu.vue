@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div>
     <div
       id="navbar-transparent-background"
       class="position-fixed"
@@ -10,100 +10,55 @@
     <b-navbar
       variant="light"
       id="navbar-flow"
-      class="navbar-right flex-column col-12 col-sm-6 col-md-4 col-lg-3
+      class="flex-column col-12 col-sm-6 col-md-4 col-lg-3
       position-fixed px-0 shadow justify-content-start"
-      :class="menuActive && 'active'"
+      :class="[menuActive && 'active', left ? 'navbar-left' : 'navbar-right']"
     >
       <b-nav-text class="d-flex w-100">
         <b-button-close class="close text-dark mx-3" @click="offMenu"/>
-        <b-nav-text class="mx-2">Witaj</b-nav-text>
+        <b-nav-text v-if="hello" class="mx-2">Witaj</b-nav-text>
       </b-nav-text>
-      <b-nav>
-        <b-nav-item type="light" class="w-100">
-          <font-awesome-icon icon="home" />
-          Pulpit
-        </b-nav-item>
-        <div role="tablist" class="w-100">
-          <b-card no-body class="border-0">
-            <b-card-header header-tag="header" class="p-0 border-0 m-0 rounded-0" role="tab">
+      <b-input-group v-if="searchable" class="mt-3">
+        <b-form-input v-model="inputVal"></b-form-input>
+        <b-input-group-append>
+          <b-button variant="primary" class="rounded-0">Button</b-button>
+        </b-input-group-append>
+      </b-input-group>
+      <b-nav v-for="(item, index) in menuData" :key="item.name"
+        class="w-100"
+      >
+        <b-card-header v-if="item.children.length" header-tag="header"
+          class="p-0 border-0 m-0 rounded-0 w-100" role="tab"
+        >
               <b-button
-                block href="#"
-                v-b-toggle.accordion-1
+                block
+                v-b-toggle="`accordion-${index}`"
                 variant="light"
                 class="w-100 text-left border-0 rounded-0 px-3 py-2"
               >
-                <font-awesome-icon icon="user" />
-                Konta
+                <font-awesome-icon v-if="item.meta.icon" :icon="item.meta.icon" />
+                {{ item.meta.displayName }}
                 <font-awesome-icon icon="chevron-right" class="ml-2"/>
               </b-button>
             </b-card-header>
-            <b-collapse id="accordion-1" accordion="my-accordion" role="tabpanel">
+            <b-collapse :id="`accordion-${index}`" accordion="my-accordion"
+              role="tabpanel" v-if="item.children.length"
+              class="w-100"
+            >
               <b-card-body class="p-0">
                 <b-nav vertical class="p-0 border-top">
-                  <b-nav-item class="text-dark text-left" href="#">
-                  Link
-                  </b-nav-item>
-                  <b-nav-item class="text-dark text-left" href="#">
-                    Link
-                  </b-nav-item>
-                  <b-nav-item class="text-dark text-left" href="#">
-                    Link
+                  <b-nav-item v-for="child in item.children" :key="child.name"
+                    class="text-dark text-left" :href="child.path"
+                  >
+                    {{child.meta.displayName}}
                   </b-nav-item>
                 </b-nav>
               </b-card-body>
             </b-collapse>
-          </b-card>
-
-          <b-card no-body class="border-0">
-            <b-card-header header-tag="header" class="p-0 border-0 m-0 rounded-0" role="tab">
-              <b-button
-                block href="#"
-                v-b-toggle.accordion-2
-                variant="light"
-                class="w-100 text-left border-0 rounded-0 px-3 py-2"
-              >
-                <font-awesome-icon icon="cogs" />
-                Konfiguracja
-                <font-awesome-icon icon="chevron-right" class="ml-2"/>
-              </b-button>
-            </b-card-header>
-            <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
-              <b-card-body class="p-0">
-                <b-nav vertical class="p-0 border-top">
-                  <b-nav-item class="text-left" href="#">
-                  Link
-                  </b-nav-item>
-                  <b-nav-item class="text-left" href="#">
-                    Link
-                  </b-nav-item>
-                  <b-nav-item class="text-left" href="#">
-                    Link
-                  </b-nav-item>
-                </b-nav>
-              </b-card-body>
-            </b-collapse>
-          </b-card>
-        </div>
-        <b-nav-item type="light" class="w-100" href="#">
-          <font-awesome-icon icon="folder-open" />
-          Zamówienia
-        </b-nav-item>
-        <b-nav-item type="light" class="w-100">
-          <font-awesome-icon icon="share" />
-          Reklamacje
-        </b-nav-item>
-        <b-nav-item type="light" class="w-100">
-          <font-awesome-icon icon="file-alt" />
-          Raporty
-        </b-nav-item>
-        <b-nav-item type="light" class="w-100">
-          <font-awesome-icon icon="archive" />
-          Schowek
-        </b-nav-item>
-        <b-nav-item type="light" class="w-100">
-          <font-awesome-icon icon="sign-out-alt" />
-          Wyloguj
-        </b-nav-item>
+            <b-nav-item v-if="!item.children.length" type="light" class="w-100" :href="item.path">
+              <font-awesome-icon v-if="item.meta.icon" :icon="item.meta.icon" />
+              {{item.meta.displayName}}
+            </b-nav-item>
       </b-nav>
     </b-navbar>
   </div>
@@ -117,8 +72,22 @@ export default {
       this.$emit('triggerMenu');
     },
   },
+  computed: {
+    inputVal: {
+      get() {
+        return this.value;
+      },
+      set(val) {
+        this.$emit('input', val);
+      },
+    },
+  },
   props: {
     menuActive: Boolean,
+    menuData: Array,
+    left: Boolean,
+    hello: Boolean,
+    searchable: Boolean,
   },
 };
 </script>

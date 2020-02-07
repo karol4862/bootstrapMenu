@@ -5,7 +5,7 @@ import {
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faUser, faCogs, faFolderOpen, faShare, faArchive, faSignOutAlt, faFileAlt, faHome,
-  faChevronRight,
+  faChevronRight, faUsersCog, faFile,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -14,7 +14,7 @@ import App from './App.vue';
 
 library.add(
   faUser, faCogs, faFolderOpen, faShare, faArchive, faSignOutAlt, faHome, faFileAlt,
-  faChevronRight,
+  faChevronRight, faUsersCog, faFile,
 );
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 

@@ -1,0 +1,445 @@
+[
+  {
+    "name": "pulpit",
+    "path": "/kokpit/pulpit",
+    "display": true,
+    "meta": {
+      "requiresAuth": true,
+      "menuType": "sidebar",
+      "icon": "home",
+      "displayName": "Pulpit",
+      "breadcrumbs": [
+        {
+          "name": "Strona główna",
+          "url": ""
+        },
+        {
+          "name": "Pulpit",
+          "url": "kokpit/pulpit"
+        }
+      ]
+    },
+    "parent": "",
+    "children": []
+  },
+  {
+    "name": "konta",
+    "path": "/kokpit/konta",
+    "display": true,
+    "meta": {
+      "requiresAuth": true,
+      "menuType": "sidebar",
+      "icon": "users-cog",
+      "displayName": "Konta"
+    },
+    "children": [
+      {
+        "name": "uzytkownicy",
+        "path": "uzytkownik",
+        "display": true,
+        "meta": {
+          "requiresAuth": true,
+          "menuType": "sidebar",
+          "icon": "users",
+          "displayName": "Użytkownicy",
+          "breadcrumbs": [
+            {
+              "name": "Strona główna",
+              "url": ""
+            },
+            {
+              "name": "Pulpit",
+              "url": "kokpit/pulpit"
+            },
+            {
+              "name": "Zarządzaj użytkownikami",
+              "url": "kokpit/konta/uzytkownik"
+            }
+          ]
+        },
+        "permission": "Pages.UserManagement",
+        "parent": "",
+        "children": []
+      },
+      {
+        "name": "role",
+        "path": "rola",
+        "display": true,
+        "meta": {
+          "requiresAuth": true,
+          "menuType": "sidebar",
+          "icon": "users",
+          "displayName": "Role",
+          "breadcrumbs": [
+            {
+              "name": "Strona główna",
+              "url": ""
+            },
+            {
+              "name": "Pulpit",
+              "url": "kokpit/pulpit"
+            },
+            {
+              "name": "Zarządzaj rolami",
+              "url": "kokpit/konta/rola"
+            }
+          ]
+        },
+        "permission": "Pages.RoleManagement",
+        "parent": "",
+        "children": []
+      }
+    ],
+    "parent": ""
+  },
+  {
+    "name": "konfiguracja",
+    "path": "/kokpit/konfiguracja",
+    "display": true,
+    "meta": {
+      "requiresAuth": true,
+      "menuType": "sidebar",
+      "icon": "cogs",
+      "displayName": "Konfiguracja"
+    },
+    "children": [
+      {
+        "name": "ustawienia-globalne",
+        "path": "globalna",
+        "display": true,
+        "meta": {
+          "requiresAuth": true,
+          "menuType": "sidebar",
+          "icon": "sliders-h",
+          "displayName": "Ustawienia globalne",
+          "breadcrumbs": [
+            {
+              "name": "Strona główna",
+              "url": ""
+            },
+            {
+              "name": "Pulpit",
+              "url": "kokpit/pulpit"
+            },
+            {
+              "name": "Ustawienia globalne",
+              "url": "kokpit/konfiguracja/globalna"
+            }
+          ]
+        },
+        "permission": "Pages.GlobalConfiguration",
+        "parent": "",
+        "children": []
+      },
+      {
+        "name": "bloki-statyczne",
+        "path": "bloki-statyczne",
+        "display": true,
+        "meta": {
+          "requiresAuth": true,
+          "menuType": "sidebar",
+          "icon": "th-large",
+          "displayName": "Bloki statyczne",
+          "breadcrumbs": [
+            {
+              "name": "Strona główna",
+              "url": ""
+            },
+            {
+              "name": "Pulpit",
+              "url": "kokpit/pulpit"
+            },
+            {
+              "name": "Bloki statyczne",
+              "url": "kokpit/konfiguracja/bloki-statyczne"
+            }
+          ]
+        },
+        "permission": "Pages.StaticBlocks",
+        "parent": "",
+        "children": []
+      },
+      {
+        "name": "repozytorium-plikow",
+        "path": "repozytorium",
+        "display": true,
+        "meta": {
+          "requiresAuth": true,
+          "menuType": "sidebar",
+          "icon": "th-large",
+          "displayName": "Repozytorium plików",
+          "breadcrumbs": [
+            {
+              "name": "Strona główna",
+              "url": ""
+            },
+            {
+              "name": "Pulpit",
+              "url": "kokpit/pulpit"
+            },
+            {
+              "name": "Repozytorium plików",
+              "url": "kokpit/konfiguracja/repozytorium"
+            }
+          ]
+        },
+        "permission": "Pages.FileRepository",
+        "parent": "",
+        "children": []
+      },
+      {
+        "name": "konfiguracja-blog",
+        "path": "blog",
+        "display": true,
+        "meta": {
+          "requiresAuth": true,
+          "menuType": "sidebar",
+          "icon": "th-large",
+          "displayName": "Zarządzaj blogiem",
+          "breadcrumbs": [
+            {
+              "name": "Strona główna",
+              "url": ""
+            },
+            {
+              "name": "Pulpit",
+              "url": "kokpit/pulpit"
+            },
+            {
+              "name": "Zarządzaj blogiem",
+              "url": "kokpit/konfiguracja/blog"
+            }
+          ]
+        },
+        "permission": "Pages.Blog",
+        "parent": "",
+        "children": []
+      },
+      {
+        "name": "Powiadomienia",
+        "path": "powiadomienia",
+        "display": true,
+        "meta": {
+          "requiresAuth": true,
+          "menuType": "sidebar",
+          "icon": "simple-icon-docs",
+          "displayName": "Powiadomienia",
+          "breadcrumbs": [
+            {
+              "name": "Strona główna",
+              "url": ""
+            },
+            {
+              "name": "Pulpit",
+              "url": "kokpit/pulpit"
+            },
+            {
+              "name": "Powiadomienia",
+              "url": "kokpit/konfiguracja/powiadomienia"
+            }
+          ]
+        },
+        "permission": "Pages.Notification",
+        "parent": "",
+        "children": []
+      },
+      {
+        "name": "powiadom-o-dostępnosci",
+        "path": "dostepnosc",
+        "display": true,
+        "meta": {
+          "requiresAuth": true,
+          "menuType": "sidebar",
+          "icon": "sliders-h",
+          "displayName": "Powiadom o dostępności",
+          "breadcrumbs": [
+            {
+              "name": "Strona główna",
+              "url": ""
+            },
+            {
+              "name": "Pulpit",
+              "url": "kokpit/pulpit"
+            },
+            {
+              "name": "Dostępność produktów",
+              "url": "kokpit/konfiguracja/dostepnosc"
+            }
+          ]
+        },
+        "permission": "Pages.NotifyAvailability",
+        "parent": "",
+        "children": []
+      },
+      {
+        "name": "newsletter",
+        "path": "newsletter",
+        "display": true,
+        "meta": {
+          "requiresAuth": true,
+          "menuType": "sidebar",
+          "icon": "sliders-h",
+          "displayName": "Newsletter",
+          "breadcrumbs": [
+            {
+              "name": "Strona główna",
+              "url": ""
+            },
+            {
+              "name": "Pulpit",
+              "url": "kokpit/pulpit"
+            },
+            {
+              "name": "Subskrypcje newsletter",
+              "url": "kokpit/konfiguracja/newsletter"
+            }
+          ]
+        },
+        "permission": "Pages.Newsletter",
+        "parent": "",
+        "children": []
+      },
+      {
+        "name": "punkty_sprzedazy",
+        "path": "punkty-sprzedazy",
+        "display": true,
+        "meta": {
+          "requiresAuth": true,
+          "menuType": "sidebar",
+          "icon": "simple-icon-docs",
+          "displayName": "Punkty sprzedaży",
+          "breadcrumbs": [
+            {
+              "name": "Strona główna",
+              "url": ""
+            },
+            {
+              "name": "Pulpit",
+              "url": "kokpit/pulpit"
+            },
+            {
+              "name": "Punkty sprzedaży",
+              "url": "admin/konfiguracja/punkty-sprzedazy"
+            }
+          ]
+        },
+        "permission": "Pages.PointsOfSale",
+        "parent": "",
+        "children": []
+      },
+      {
+        "name": "slowniki",
+        "path": "slowniki",
+        "display": true,
+        "meta": {
+          "requiresAuth": true,
+          "menuType": "sidebar",
+          "icon": "sliders-h",
+          "displayName": "Słowniki",
+          "breadcrumbs": [
+            {
+              "name": "Strona główna",
+              "url": ""
+            },
+            {
+              "name": "Pulpit",
+              "url": "kokpit/pulpit"
+            },
+            {
+              "name": "Słowniki",
+              "url": "kokpit/konfiguracja/slowniki"
+            }
+          ]
+        },
+        "permission": "Pages.Dictionaries",
+        "parent": "",
+        "children": []
+      },
+      {
+        "name": "dostawy",
+        "path": "dostawy",
+        "display": true,
+        "meta": {
+          "requiresAuth": true,
+          "menuType": "sidebar",
+          "icon": "simple-icon-docs",
+          "displayName": "Dostawy",
+          "breadcrumbs": [
+            {
+              "name": "Strona główna",
+              "url": ""
+            },
+            {
+              "name": "Pulpit",
+              "url": "kokpit/pulpit"
+            },
+            {
+              "name": "Dostawy",
+              "url": "kokpit/konfiguracja/dostawy"
+            }
+          ]
+        },
+        "permission": "Pages.Delivery",
+        "parent": "",
+        "children": []
+      },
+      {
+        "name": "platnosci",
+        "path": "platnosci",
+        "display": true,
+        "meta": {
+          "requiresAuth": true,
+          "menuType": "sidebar",
+          "icon": "simple-icon-docs",
+          "displayName": "Płatności",
+          "breadcrumbs": [
+            {
+              "name": "Strona główna",
+              "url": ""
+            },
+            {
+              "name": "Pulpit",
+              "url": "kokpit/pulpit"
+            },
+            {
+              "name": "Płatności",
+              "url": "kokpit/konfiguracja/platnosci"
+            }
+          ]
+        },
+        "permission": "Pages.Payment",
+        "parent": "",
+        "children": []
+      }
+    ],
+    "parent": ""
+  },
+  {
+    "name": "zamowienia",
+    "path": "/kokpit/zamowienia",
+    "display": true,
+    "meta": {
+      "requiresAuth": true,
+      "menuType": "sidebar",
+      "icon": "file",
+      "displayName": "Zamówienia",
+      "breadcrumbs": [
+        {
+          "name": "Strona główna",
+          "url": ""
+        },
+        {
+          "name": "Pulpit",
+          "url": "kokpit/pulpit"
+        },
+        {
+          "name": "Zamówienia",
+          "url": "kokpit/zamowienia"
+        }
+      ]
+    },
+    "permission": "Pages.Order",
+    "parent": "",
+    "children": []
+  }
+]

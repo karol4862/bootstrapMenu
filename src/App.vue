@@ -73,16 +73,25 @@ export default {
     searchClicked() {
       console.log('Search clicked');
     },
+    resizeMenu(leftSize) {
+      this.menuData = json;
+      this.menuLeftData = jsonLeft;
+      // eslint-disable-next-line no-unused-expressions
+      leftSize
+        + this.$refs.rightNav.offsetWidth
+        > this.$refs.parentNav.offsetWidth
+        ? this.$refs.leftNav.classList.add('nav-over-size')
+        : this.$refs.leftNav.classList.remove('nav-over-size');
+    },
   },
   mounted() {
     this.menuData = json;
     this.menuLeftData = jsonLeft;
     this.$nextTick(() => {
+      const menuSize = this.$refs.leftNav.offsetWidth;
       // eslint-disable-next-line no-unused-expressions
-      this.$refs.leftNav.offsetWidth
-      + this.$refs.rightNav.offsetWidth
-      > this.$refs.parentNav.offsetWidth
-        && this.$refs.leftNav.classList.add('nav-over-size');
+      this.resizeMenu(menuSize);
+      window.addEventListener('resize', () => this.resizeMenu(menuSize));
     });
   },
 };

@@ -21,7 +21,7 @@
       <b-input-group v-if="searchable" class="mt-3">
         <b-form-input v-model="inputVal"></b-form-input>
         <b-input-group-append>
-          <b-button variant="primary" class="rounded-0">Button</b-button>
+          <b-button variant="primary" class="rounded-0" @click="doSearch">Button</b-button>
         </b-input-group-append>
       </b-input-group>
       <b-nav v-for="(item, index) in menuData" :key="item.name"
@@ -70,6 +70,9 @@ export default {
   methods: {
     offMenu() {
       this.$emit('triggerMenu');
+    },
+    doSearch() {
+      this.$emit('searching');
     },
   },
   computed: {

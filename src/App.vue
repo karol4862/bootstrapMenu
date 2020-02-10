@@ -44,6 +44,7 @@
       :menuData="menuLeftData"
       left
       searchable
+      @searching="searchClicked"
       v-model="valueInput"
     />
   </b-container>
@@ -68,6 +69,11 @@ export default {
   components: {
     Menu,
   },
+  methods: {
+    searchClicked() {
+      console.log('Search clicked');
+    },
+  },
   mounted() {
     this.menuData = json;
     this.menuLeftData = jsonLeft;
@@ -78,9 +84,6 @@ export default {
       > this.$refs.parentNav.offsetWidth
         && this.$refs.leftNav.classList.add('nav-over-size');
     });
-    // eslint-disable-next-line no-unused-expressions
-    // const rightNavs = this.$refs.rightNav.offsetWidth;
-    // const parentNavs = this.$refs.parentNav.offsetWidth;
   },
 };
 </script>

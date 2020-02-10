@@ -153,8 +153,4 @@ export default {
 .btn[aria-expanded*='true'] .fa-chevron-right{
   transform: rotate(0);
 }
-.btn:active, .btn:focus{
-  background-color: transparent !important;
-  box-shadow: none;
-}
 </style>

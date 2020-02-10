@@ -128,7 +128,7 @@ export default {
   }
 }
 @include media-breakpoint-down(md) {
-  .collapse.show{
+  .navbar-expand-md .collapse.show{
     display: none !important;
   }
 }

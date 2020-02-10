@@ -16,7 +16,7 @@
     >
       <b-nav-text class="d-flex w-100">
         <b-button-close class="close text-dark mx-3" @click="offMenu"/>
-        <b-nav-text v-if="hello" class="mx-2">Witaj</b-nav-text>
+        <b-nav-text v-if="welcome" class="mx-2">{{welcome}}</b-nav-text>
       </b-nav-text>
       <b-input-group v-if="searchable" class="mt-3">
         <b-form-input v-model="inputVal"></b-form-input>
@@ -86,7 +86,7 @@ export default {
     menuActive: Boolean,
     menuData: Array,
     left: Boolean,
-    hello: Boolean,
+    welcome: [Boolean, String],
     searchable: Boolean,
   },
 };

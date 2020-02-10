@@ -36,7 +36,7 @@
       @triggerMenu="isMenuActive = false"
       :menuActive="isMenuActive"
       :menuData="menuData"
-      hello
+      welcome="Witaj"
       />
     <Menu
       @triggerMenu="isLeftMenuActive = false"

@@ -111,10 +111,16 @@ export default {
   display: none !important;
 }
 
+
 @include media-breakpoint-down(sm) {
   .container-md{
     width: 100% !important;
     max-width: 100% !important;
+  }
+}
+@include media-breakpoint-down(md) {
+  .collapse.show{
+    display: none !important;
   }
 }
 </style>
